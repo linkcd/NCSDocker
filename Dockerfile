@@ -3,15 +3,21 @@ FROM resin/raspberrypi3-debian:stretch
 #steps from https://movidius.github.io/blog/ncs-apps-on-rpi/
 
 #step 1 Install Debian and Python dependencies
-
-nstall necessary packages for the installer
 RUN apt-get update && apt-get install -y \
     build-essential \
+    git \
     sed \
     sudo \
     tar \
     udev \
     wget \
+    libusb-1.0-0-dev \
+    python \
+    python-pip \
+    python3 \
+    python3-pip \
+    python3-setuptools \
+    python3-numpy \
     && apt-get clean
 
 #step 2 Download NCSDK onto your Pi
